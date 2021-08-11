@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo-header">
+        </a>
+    </header>
+    <nav class="navegacion">
+        <a href="index.html" class="enlace-navegacion">Tienda</a>
+        <a href="nosotros.html" class="enlace-navegacion">Nosotros</a>
+    </nav>
+
+    <main class="contenedor venta-producto">
+        <h1 class="titulo">React JS</h1>
+        <div class="venta">
+            <img src="img/3.jpg" alt="producto-1" class="venta-img">
+        </div>
+        <div class="carrito">
+            <p class="venta-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, eaque cumque? Voluptas omnis similique
+                autem exercitationem illum! Vitae, reprehenderit dolores assumenda id omnis quam officia rerum in! Et,
+                laudantium tempore?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione animi fugiat nemo quo aut, ad adipisci
+                placeat praesentium iure.
+            </p>
+            <form class="formulario">
+                <select class="formulario-campo">
+                    <option disabled selected>-- Seleccionar Talla</option>
+                    <option value="Chica">Chica</option>
+                    <option value="Mediana">Mediana</option>
+                    <option value="Grande">Grande</option>
+                </select>
+                <input type="number" placeholder="Cantidad" min="1" class="formulario-campo">
+                <input type="submit" class="formulario-boton" value="Agregar A Carrito">
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>FrontEnd Store Todos los Derechos Reservados 2022.</p>
+    </footer>
+
+</body>
+
+</html>

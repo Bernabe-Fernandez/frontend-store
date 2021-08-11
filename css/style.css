@@ -1,0 +1,350 @@
+/***** Custom Proporties ******/
+:root {
+  /*** Colores ***/
+  --primario: #9c27b0;
+  --primarioOscuro: #89119d;
+  --secundario: #ffce00;
+  --secundarioOscuro: rgb(233, 287, 2);
+  --blanco: #fff;
+  --negro: #000;
+
+  /*** Tipografia ***/
+  --font: "Staatliches", cursive;
+}
+
+/***** Espacio de Reseteo *****/
+
+/*** Modificacion del HTML***/
+html {
+  box-sizing: border-box; /*Hack para Box Model*/
+  font-size: 62.5%; /*Esto permite que 1 rem sea igual a 10px*/
+}
+
+*,
+*:before,
+*:after {
+  /*Hack para Box Model*/
+  box-sizing: inherit;
+}
+
+/*** Modificacion del body ***/
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  line-height: 1.5; /*Interlineado*/
+  background-color: var(--primario);
+}
+
+/*** Estilos designados para el Parrafo ***/
+p {
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--blanco);
+}
+
+/*** Reseteo de los links ***/
+a {
+  text-decoration: none; /*para quitar el subrayado de los enlaces*/
+}
+
+/*** Definimos ancho de las imagenes ***/
+img {
+  width: 100%; /*ancho de las imagenes*/
+}
+
+/*** Determinamos los estilos de los titulos ***/
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--secundario);
+  font-family: var(--font);
+}
+
+/** Definimos los tamaños proporcionales de los titulos **/
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+/***** Componentes *****/
+.contenedor {
+  max-width: 120rem; /*ancho maximo para el contenedor*/
+  margin: 0 auto; /*esto nos ayuda a que el contenedor este centrado*/
+}
+
+.navegacion {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--primarioOscuro);
+  padding: 1rem;
+}
+
+.enlace-navegacion {
+  text-transform: uppercase;
+  font-family: var(--font);
+  font-size: 3rem;
+  color: var(--blanco);
+  margin-right: 2rem;
+}
+
+.enlace-navegacion:last-of-type {
+  margin-right: 0;
+}
+
+.enlace-navegacion:hover,
+.enlace-navegacion--activo {
+  color: var(--secundario);
+}
+
+/***** Utilidades *****/
+
+/***** Estilo de la Pagina *****/
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.contenedor-producto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
+/** Responsive Display Productos **/
+@media (min-width: 760px) {
+  .contenedor-producto {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contenedor-producto .producto {
+  background-color: var(--primarioOscuro);
+  padding: 1rem;
+}
+
+.producto p {
+  margin: 1rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: var(--font);
+  line-height: 1.2;
+}
+
+.titulo-producto {
+  font-size: 3.5rem;
+}
+
+.precio-producto {
+  font-size: 2.3rem;
+  color: var(--secundario);
+}
+
+/*** Graficos ***/
+.grafico {
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: 1/3;
+}
+
+.grafico-camisa {
+  background-image: url(../img/grafico1.jpg);
+  grid-row: 2/3;
+}
+
+.grafico-node {
+  background-image: url(../img/grafico2.jpg);
+  grid-row: 8/9;
+}
+
+@media (min-width: 760px) {
+  .grafico {
+    height: 100%;
+  }
+  .grafico-node {
+    grid-column: 2/4;
+    grid-row: 5/6;
+  }
+}
+
+/*** Footer ***/
+.footer {
+  background-color: var(--primarioOscuro);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.footer > p {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font);
+}
+
+/*** Nosotros ***/
+.sobre-nosotros {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/*Estilo a la imagen */
+.nosotros-img {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Estilos al parrafo */
+.nosotros-info {
+  text-align: justify;
+}
+
+/** Responsive Display Nosotros*/
+@media (min-width: 1024px) {
+  .sobre-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nosotros-img {
+    width: 100%;
+    grid-column: 2/3;
+  }
+  .nosotros-info {
+    grid-row: 1/2;
+  }
+}
+
+/**Items**/
+.items {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  column-gap: 2rem;
+}
+
+.item-img {
+  margin: 0 auto;
+}
+
+.item-titulo {
+  margin: 0 auto;
+}
+
+.item-info {
+  text-align: center;
+  margin: 1rem;
+}
+
+/** Responsive Display Items */
+@media (min-width: 760px) {
+  .items {
+    grid-template-columns: repeat(4, 1fr);
+    width: 95%;
+  }
+}
+
+/*** Producto Venta ****/
+.venta-producto {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.venta-info {
+  text-align: justify;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.formulario-campo {
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+  border: 1rem solid var(--primarioOscuro);
+  color: var(--blanco);
+  padding: 0.5rem;
+}
+
+.formulario-boton {
+  grid-column: span 2;
+  background-color: var(--secundario);
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font);
+  font-size: 2rem;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
+  transition: font-size 0.3s ease;
+}
+
+.formulario-boton:hover {
+  cursor: pointer;
+  background-color: var(--secundarioOscuro);
+  font-size: 2.1rem;
+}
+
+/** Display Responsive Venta **/
+
+@media (min-width: 760px) {
+  .venta {
+    margin: 0 auto;
+  }
+  .venta-img {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .venta-producto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .titulo {
+    grid-column: span 2;
+  }
+
+  .venta-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carrito {
+    margin: auto;
+  }
+
+  .formulario-campo {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+}
